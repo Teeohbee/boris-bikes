@@ -14,6 +14,7 @@ bike | works?
 docking_station | release_a_bike
 
 Bike <-- works? --> true/false
+
 DockingStation <-- release_bike --> a Bike
 
 ![Diagram]
