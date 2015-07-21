@@ -12,3 +12,6 @@ Objects | Messages
 person |
 bike | works?
 docking_station | release_a_bike
+
+![Diagram]
+(https://raw.githubusercontent.com/Teeohbee/boris-bikes/master/userstories/diagram.png)
