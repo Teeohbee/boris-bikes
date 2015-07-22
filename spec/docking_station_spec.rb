@@ -18,6 +18,11 @@ it "gets working bike" do
   expect(bike).to be_working
 end
 
+it 'has a default capacity' do
+  expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+end
+
+
   describe '#release_bike' do
     it 'raises an error when there are no bikes available' do
       expect{subject.release_bike}.to raise_error 'No bikes available'
@@ -26,7 +31,7 @@ end
 
   describe '#dock' do
     it 'raises an error when it goes over capacity of 20' do
-      20.times { subject.dock(Bike.new) }
+      subject.capacity.times { subject.dock(Bike.new) }
       expect{subject.dock(Bike.new)}.to raise_error 'Capacity full'
     end
   end
