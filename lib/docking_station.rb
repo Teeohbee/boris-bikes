@@ -10,9 +10,24 @@ class DockingStation
   end
 
   def release_bike
-    fail 'No bikes available' if empty?
-    bike.pop
+      bmx = bike.select{|bike| bike.working}.pop
+
+      if bmx.nil?
+          fail "No bikes available"
+        else bmx
+      end
+        bike.delete bmx
   end
+
+  #   def release_bike
+#     bike = bikes.select{|bike| bike.working}.pop
+#     if bike.nil?
+#       fail 'No bikes available'
+#     else
+#       bikes.delete bike
+#       bike  #IE WHEN THE INSTANCE VARIABLE @BIKE IS NIL
+#     end
+#   end
 
   def dock(bmx)
     fail 'Capacity full' if full?
