@@ -28,7 +28,7 @@ describe DockingStation do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
-      it "releases only working bikes" do
+      it "releases working bikes" do
       bmr = double :bike, broken?: false, working?: true
       subject.dock bmr
       bmx = subject.release_bike
@@ -43,7 +43,15 @@ describe DockingStation do
       expect {subject.release_bike}.to raise_error 'No working bikes'
     end
 
-
+    it "releases ONLY working bikes" do
+      bike = Bike.new
+      broken = Bike.new
+      broken.report_broken
+      subject.dock bike
+      subject.dock broken
+      bmr = subject.release_bike
+      expect(bmr).to be_working
+    end
 
   describe '#release_bike' do
     it 'raises an error when there are no bikes available' do
