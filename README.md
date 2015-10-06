@@ -16,6 +16,7 @@ The original brief was as follows:
 
 ###Things I Learned
 * **Pairing** - This was my first real experience in pairing and was a real eye-opener for me. Changing pair partner each day allowed me to explore multiple perspectives, ideas & solutions around the same problem, something I found hugely beneficial when trying to understand a new concept.
+
 * **Domain Models** - Prior to this week, my Ruby knowledge was focused around solving singular, logical problems. Boris Bikes introduced me to the concept of domain models and the larger picture of how software is actually put together.
 
 ###Extensions
